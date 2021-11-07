@@ -65,7 +65,7 @@ function nextcountrie(){
     document.getElementById("round").innerHTML="Γύρος: "+round;
     document.getElementById("Score").innerHTML="Σκορ: "+score;
     var no=Math.floor(Math.random()*countryObjects.length);
-    GetData('https://restcountries.eu/rest/v2/alpha/'+countryObjects[no].code.toLowerCase()).then(data=>{
+    GetData('https://restcountries.com/v3.1/alpha/'+countryObjects[no].code.toLowerCase()).then(data=>{
         if(data.borders.length<=0)
             nextcountrie();
          else
@@ -93,7 +93,7 @@ function nextcountrie(){
                 //<img id="my-country-flag" src="" alt=""  style="">
                 var flag=document.createElement("img");
                 //flag.style="width: 70px;height: 50px;margin-top:2px";
-                flag.src="https://restcountries.eu/data/"+ans.code3.toLowerCase()+".svg";
+                flag.src="https://restcountries.com/data/per"+ans.code3.toLowerCase()+".svg";
                 flag.display="inline-block";
                 flag.overflow="hidden";
                 div.appendChild(flag);
